@@ -23,7 +23,6 @@ body {
   margin: 30px 0;
 }
 
-
 body.dark-mode #mainContainer {
   background-color: #444;
   color: #f4f4f9;
@@ -44,7 +43,6 @@ h1 {
   color: #ff6347;
   text-align: center;
 }
-
 
 form {
   display: flex;
@@ -84,7 +82,8 @@ button:hover {
   margin: 20px;
 }
 
-#mealPlanDisplay div {
+/* Card-style blocks inside results (but NOT the .no-results notice) */
+#mealPlanDisplay div:not(.no-results) {
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -157,11 +156,11 @@ select:focus {
   border-radius: 50%;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #ff6347;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(26px);
 }
 
@@ -179,5 +178,35 @@ body.dark-mode {
   display: inline-block;
   margin-top: 5px;
   margin-left: 2px;
+}
 
+/* ---------- Notice box: visible in light + dark, overrides generic card rule ---------- */
+#mealPlanDisplay .no-results {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #ffffff !important;   /* win against generic #mealPlanDisplay div rule */
+  color: #222 !important;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+
+#mealPlanDisplay .no-results small { opacity: .9; }
+#mealPlanDisplay .no-results b { color: #111; }
+#mealPlanDisplay .no-results code {
+  background: rgba(0,0,0,.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Dark mode overrides for the notice */
+body.dark-mode #mealPlanDisplay .no-results {
+  background: #2a2a2a !important;
+  color: #f1f1f1 !important;
+  border-color: #3b3b3b;
+  box-shadow: 0 6px 18px rgba(0,0,0,.4);
+}
+body.dark-mode #mealPlanDisplay .no-results b { color: #fff; }
+body.dark-mode #mealPlanDisplay .no-results code {
+  background: rgba(255,255,255,.08);
 }

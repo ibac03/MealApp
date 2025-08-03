@@ -22,13 +22,13 @@
 
     <form id="mealForm">
       <label for="age">Age</label>
-      <input type="number" id="age" name="age" min="1" required>
+      <input type="number" id="age" name="age" min="1" value="21" required>
 
       <label for="weight">Weight (in kg)</label>
-      <input type="number" id="weight" name="weight" min="1" required>
+      <input type="number" id="weight" name="weight" min="1" value="75" required>
 
       <label for="height">Height (in cm)</label>
-      <input type="number" id="height" name="height" min="1" required>
+      <input type="number" id="height" name="height" min="1" value="178" required>
 
 
       <label for="gender">Gender</label>
@@ -53,14 +53,53 @@
         <option value="5">Five</option>
       </select>
 
-      <label for="dietPreference">Diet Preference</label>
-      <select id="dietPreference" name="dietPreference">
-        <option value="balanced">Balanced</option>
-        <option value="lowFat">Low-Fat</option>
+      <label for="cuisineType">Cuisine</label>
+      <select id="cuisineType" name="cuisineType">
+        <option value="">Any</option>
+        <option value="american">American</option>
+        <option value="asian">Asian</option>
+        <option value="british">British</option>
+        <option value="caribbean">Caribbean</option>
+        <option value="central europe">Central Europe</option>
+        <option value="chinese">Chinese</option>
+        <option value="eastern europe">Eastern Europe</option>
+        <option value="french">French</option>
+        <option value="greek">Greek</option>
+        <option value="indian">Indian</option>
+        <option value="italian">Italian</option>
+        <option value="japanese">Japanese</option>
+        <option value="korean">Korean</option>
+        <option value="kosher">Kosher</option>
+        <option value="mediterranean">Mediterranean</option>
+        <option value="mexican">Mexican</option>
+        <option value="middle eastern">Middle Eastern</option>
+        <option value="nordic">Nordic</option>
+        <option value="south american">South American</option>
+        <option value="south east asian">South East Asian</option>
+        <option value="world">World</option>
       </select>
+
+
+      <label for="dietPreference">Diet Preference</label>
+	  <select id="dietPreference" name="dietPreference">
+	    <option value="balanced">Balanced</option>
+	    <option value="high-fiber">High-Fiber</option>
+	    <option value="high-protein">High-Protein</option>
+	    <option value="low-carb">Low-Carb</option>
+	    <option value="low-fat">Low-Fat</option>
+	    <option value="low-sodium">Low-Sodium</option>
+	  </select>
+
 
       <label for="healthSpec">Health Specification</label>
       <select id="healthSpec" name="healthSpec">
+        <option value="dairy-free">Dairy-Free</option>
+        <option value="egg-free">Egg-Free</option>
+        <option value="gluten-free">Gluten-Free</option>
+        <option value="low-sugar">Low Sugar</option>
+        <option value="no-oil-added">No oil added</option>
+        <option value="peanut-free">Peanut-Free</option>
+        <option value="soy-free">Soy-Free</option>
         <option value="vegan">Vegan</option>
         <option value="vegetarian">Vegetarian</option>
       </select>
