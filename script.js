@@ -25,7 +25,15 @@ function generateMealPlan(event) {
   const APP_ID = "260d5ad0";
   const APP_KEY = "658daaf58d39bc58cdd60a9c1c9e03ab";
 
-  const apiUrl = `https://api.edamam.com/search?q=${dietPreference}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=${totalMeals}&calories=${calories}&health=${healthSpec}`;
+ const apiUrl = `https://api.edamam.com/api/recipes/v2
+  ?type=public
+  &q=${dietPreference}
+  &app_id=${APP_ID}
+  &app_key=${APP_KEY}
+  &from=0
+  &to=${totalMeals}
+  &calories=${calories}
+  &health=${healthSpec}`.replace(/\s+/g, '');
 
   fetch(apiUrl)
     .then(response => response.json())
