@@ -121,49 +121,6 @@ select:focus {
   background-color: #e6f7ff;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #ff6347;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
 body.light-mode {
   background-color: #f4f4f9;
   color: #333;
@@ -174,11 +131,7 @@ body.dark-mode {
   color: #f4f4f9;
 }
 
-.icon {
-  display: inline-block;
-  margin-top: 5px;
-  margin-left: 2px;
-}
+/* removed old slider icons */
 
 /* ---------- Notice box: visible in light + dark, overrides generic card rule ---------- */
 #mealPlanDisplay .no-results {
@@ -210,3 +163,39 @@ body.dark-mode #mealPlanDisplay .no-results b { color: #fff; }
 body.dark-mode #mealPlanDisplay .no-results code {
   background: rgba(255,255,255,.08);
 }
+
+/* --- Minimal styles for tiny React widgets --- */
+.react-badge {
+  margin: 8px 0 16px 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  border: 1px dashed #ff6347;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+body.dark-mode .react-badge {
+  background: #2a2a2a;
+  color: #f4f4f4;
+  border-color: #ff8a73;
+}
+.react-badge-btn {
+  background: transparent;
+  border: 1px solid #ff6347;
+  color: #ff6347;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+}
+body.dark-mode .react-badge-btn {
+  border-color: #ff8a73;
+  color: #ff8a73;
+}
+.react-footer {
+  margin: 24px 0 40px 0;
+  opacity: 0.9;
+}
+body.dark-mode .react-footer { opacity: 0.85; }

@@ -11,14 +11,9 @@
 <body>
   <div id="mainContainer">
     <h1>MealApp</h1>
+  <!-- Minimal React badge mount point -->
+  <div id="reactBadge"></div>
     
-    <label class="switch">
-      <input type="checkbox" id="themeToggle">
-      <span class="slider">
-        <span class="icon sun">🌞</span>
-        <span class="icon moon">🌜</span>
-      </span>
-    </label>
 
     <form id="mealForm">
       <label for="age">Age</label>
@@ -110,7 +105,14 @@
 
   <div id="mealPlanDisplay"></div>
 
+  <!-- Minimal React footer mount point -->
+  <div id="reactFooter"></div>
+
   <script src="script.js"></script>
+  <!-- React (CDN) for small UI widgets; does not change existing logic -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="react-widgets.js"></script>
 </body>
 
 </html>

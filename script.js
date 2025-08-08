@@ -1,5 +1,3 @@
-// script.js
-
 document.getElementById('mealForm').addEventListener('submit', generateMealPlan);
 
 async function generateMealPlan(event) {
@@ -37,7 +35,7 @@ async function generateMealPlan(event) {
 
   // 2) widen calories first (keep cuisine)
   if (recipes.length < needed) {
-    relaxed.push('Calories ±600');
+    relaxed.push('Calories +/-600');
     calMin = Math.max(0, calories - 600);
     calMax = calories + 600;
     recipes = await fillMore(recipes, { diet: dietPreference, health: healthSpec, cuisineType, calMin, calMax, needed });
@@ -192,6 +190,7 @@ function showNoResults({ cuisineType, dietPreference, healthSpec, calMin, calMax
   container.appendChild(note);
 }
 
-document.getElementById('themeToggle').addEventListener('change', () => {
+// Theme toggle now handled by React badge; expose a helper for reuse/testing
+window.toggleDarkMode = function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
-});
+};
