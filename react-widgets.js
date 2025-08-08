@@ -36,7 +36,6 @@
     return h(
       'div',
       { className: 'react-badge', role: 'note', title: 'Defaults to browser theme' },
-      h('span', null, 'Theme - '),
       h(
         'button',
         { className: 'react-badge-btn', onClick: toggle },
